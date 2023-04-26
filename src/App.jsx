@@ -6,15 +6,16 @@ import { useSelector, useDispatch } from 'react-redux'
 
 
 function App() {
-  const count = useSelector(state => state.count)
-  const name = useSelector(state => state.name)
+  const count = useSelector(state => state.counter.count)
+  const name = useSelector(state => state.name.name)
   const dispatch = useDispatch()
 
   const increase = () => {
-    dispatch({type: 'INCREASE'})
+    dispatch({type: 'INCREASE_COUNT'})
   }
 
   const decrease = () => { 
+    
   }
 
   const changeName = (e) => { 
@@ -25,6 +26,7 @@ function App() {
     <>
       <input type="text" onChange={changeName}/>
       <h4>My name: {name}</h4>
+      <h4>Counter: {count}</h4>
       <button onClick={increase}>+</button>
       <button onClick={decrease}>-</button>
     </>
