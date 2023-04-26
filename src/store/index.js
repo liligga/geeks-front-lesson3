@@ -2,11 +2,13 @@ import { composeWithDevTools } from '@redux-devtools/extension';
 import { legacy_createStore as createStore, combineReducers } from 'redux'
 import { nameReducer } from './nameReducer'
 import { counterReducer } from './counterReducer'
+import { todoReducer } from './todoReducer';
 
 
 const rootReducer = combineReducers({
   name: nameReducer,
-  counter: counterReducer
+  counter: counterReducer,
+  todo: todoReducer
 })
 
 
